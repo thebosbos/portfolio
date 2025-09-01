@@ -1,0 +1,3214 @@
+/*
+-------------------------------------------------
+  Theme Name: AiLand - Prome - Personal Portfolio HTML5 Responsive Template
+  Theme URL:
+  Author: ayshatech
+  Author URL: 
+  Creation Date: 15-November-2024
+  Description:A default stylesheet for Prome - Personal Portfolio HTML5 Responsive Template
+  Version: 1.00
+  Primary use: portfolio, folio, Portfolio, Personal Portfolio, personal portfolio, resume, cv, designer portfolio,developer portfolio, photographer portfolio, any kind of professional portfolio, professional portfolio etc.
+
+  ---------------------------------------------------
+  Developed By: ayshatech
+  Author URL: https://ayshatech.com/
+  Developer URL: https://suraiyaaysha.com/
+  Developer: Suraiya Aysha
+  Contact: hello.suraiyaaysha@gmail.com
+  ---------------------------------------------------
+
+  --------------------------------------------------
+  Table of Contents
+  --------------------------------------------------
+  1. General CSS
+  2. Typography CSS
+  3. Button CSS
+  4. Common Custom Scrollbar
+  5. Navbar Area
+  6. Scroll down Area
+  7. Preloader Area
+  8. Header Area
+  9. About Me Area
+  10. Recent Works Area
+  11. Services Area
+  12. Marquee Area
+  13. Expertise Slider Area
+  14. Pricing Plan Area
+  15. Customer Testimonial Area
+  16. Blog Area
+  17. Blog grid Area
+  18. Blog Details Page
+  19. Footer Area
+  20. Page Banner
+  21. About Page
+  22. Service Details Page
+  23. Portfolio Page
+  24. Portfolio  DetailsPage
+  25. Contact Page
+  26. Responsive CSS
+
+------------------------------------------------ */
+
+/*-----------------------------------------------
+    1. General Style Start
+-------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--bg-primary) none repeat scroll;
+    font-size: 17px;
+    font-weight: 500;
+    font-weight: normal;
+    font-family: var(--body-font-family);
+    color: var(--body-font-color);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Lenis Smooth Scroll CSS
+------------------------------- */
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+    /* scroll-behavior: smooth; */
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Theme All Transitions
+------------------------------- */
+a,
+.default-transition,
+#mainNav,
+.offcanvas .navbar-nav .nav-item .nav-link,
+.navbar .dropdown .dropdown-toggle::after,
+.theme-btn,
+button,
+.owl-carousel button.owl-dot,
+.owl-carousel .owl-nav button i,
+.testimonial-arrow,
+button,
+.card-container.blog-item h5,
+.recent-work-item .round-btn,
+.round-btn,
+.hero-dot::after,
+.price-btn-dot-1,
+.price-btn-dot-1::after {
+    transition: all .5s ease-in-out;
+}
+
+.fast-transition {
+    transition: all .3s ease-in-out;
+}
+
+.slow-transition {
+    transition: all .7s ease-in-out;
+}
+
+ul li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a>* {
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a {
+    color: var(--white-color);
+}
+
+a:hover {
+    color: var(--btn-hover-color);
+    text-decoration: none;
+}
+
+a.active {
+    color: var(--primary-color);
+}
+
+img::selection {
+    background: transparent;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+/*----Form Control Reset CSS----*/
+.form-control,
+.form-select {
+    background-color: var(--bg-primary);
+    height: 64px !important;
+    color: var(--white-color);
+    border: 0;
+    border-bottom: 1px solid var(--bg-primary-border);
+    border-radius: 0;
+    padding: 13px 30px;
+    font-size: 18px;
+    font-weight: normal !important;
+    box-shadow: 0 0 0 64px var(--bg-primary) inset !important;
+}
+
+.form-control:focus,
+.form-control:not(:placeholder-shown) {
+    background-color: var(--bg-primary) !important;
+    box-shadow: 0 0 0 64px var(--bg-primary) inset !important;
+    border-color: #86b7fe;
+    color: var(--white-color) !important;
+}
+
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 64px var(--bg-primary) inset !important;
+}
+
+.form-control::placeholder {
+    color: var(--body-font-color);
+}
+
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 64px var(--bg-primary) inset !important;
+    -webkit-text-fill-color: var(--white-color) !important;
+}
+
+.form-control:-moz-autofill,
+.form-control:-moz-autofill:hover,
+.form-control:-moz-autofill:focus,
+.form-control:-moz-autofill:active {
+    background-color: var(--bg-primary) !important;
+    color: var(--white-color) !important;
+}
+
+.input-group-text {
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 100px !important;
+    height: auto !important;
+    border-radius: 0 !important;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-select~label::after {
+    background-color: transparent;
+}
+
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    color: var(--body-font-color);
+}
+
+.form-floating>.form-control-plaintext:focus,
+.form-floating>.form-control-plaintext:not(:placeholder-shown),
+.form-floating>.form-control:focus,
+.form-floating>.form-control:not(:placeholder-shown) {
+    padding-top: 2.625rem;
+}
+
+.form-floating>.form-control,
+.form-floating>.form-control-plaintext {
+    padding-left: 0;
+}
+
+.form-floating>label {
+    padding-left: 0;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-close:focus,
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.form-select {
+    padding: 7px 32px 7px 20px;
+}
+
+/* Custom checkbox Start */
+.custom-checkbox input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.custom-checkbox label {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.custom-checkbox label:before {
+    content: '';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid var(--border-color-2);
+    box-shadow: none;
+    padding: 7px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 7px;
+    border-radius: 2px;
+}
+
+.custom-checkbox input:checked+label:before {
+    border: 1px solid var(--primary-color);
+}
+
+.custom-checkbox input:checked+label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--primary-color);
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+
+/* Custom checkbox End */
+
+/* Custom Radio Button Start */
+.custom-radiobox [type="radio"]:checked,
+.custom-radiobox [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.custom-radiobox [type="radio"]:checked+label,
+.custom-radiobox [type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: var(--body-font-color);
+    margin-bottom: 0;
+}
+
+.custom-radiobox [type="radio"]:checked+label:before,
+.custom-radiobox [type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border-color-2);
+    border-radius: 100%;
+    background: var(--white-color);
+}
+
+.custom-radiobox [type="radio"]:checked+label:after,
+.custom-radiobox [type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--primary-color);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.custom-radiobox [type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.custom-radiobox [type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* Custom Radio Button End */
+
+/*------------------------------------------
+    2. Typography
+-------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: var(--heading-color);
+    font-style: normal;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 150px;
+    line-height: 92px;
+}
+
+h2 {
+    font-size: 71px;
+    line-height: 100%;
+}
+
+h3 {
+    font-size: 60px;
+    line-height: 70px;
+}
+
+h4 {
+    font-size: 30px;
+    line-height: 36px;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+h6,
+.h-6 {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+}
+
+.page-banner-title {
+    font-size: 130px;
+    line-height: 119px;
+}
+
+.big-para {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+p {
+    margin-bottom: 0;
+    font-size: 17px;
+    line-height: 27px;
+    color: var(--body-font-color);
+}
+
+figure {
+    margin: 0 0 0;
+}
+
+/*--------------------------------
+    2.1 Theme Color
+-----------------------------------*/
+:root {
+    --navbar-bg: #010101;
+    --navbar-bg-dark: #fff;
+
+    --footer-bg: #151515;
+
+    --white-color: #fff;
+    --black-color: #000;
+
+    --bg-primary: #000;
+    --bg-secondary: #151515;
+
+    --text-primary: #000;
+    --text-secondary: #040404;
+
+    --heading-color: #fff;
+    --body-font-color: #d1d1d1;
+
+    --border-color: #2d2d2d;
+
+    --bg-primary-border: #1a1a1a;
+    --bg-secondary-border: #2d2d2d;
+
+    --primary-color: #aff42b;
+    --primary-hover-color: #b3fc6a;
+
+    --btn-color: #aff42b;
+    --btn-hover-color: #b3fc6a;
+
+    --body-font-family: 'Kanit', sans-serif;
+    --forum-regular: 'Forum', serif;
+}
+
+.color-heading {
+    color: var(--heading-color);
+}
+
+.color-hover {
+    color: var(--primary-hover-color);
+}
+
+.primary-color {
+    color: var(--primary-color) !important;
+}
+
+.theme-bg {
+    background-color: var(--primary-color);
+}
+
+.primary-color:hover {
+    color: var(--primary-hover-color) !important;
+}
+
+.text-black {
+    color: var(--black-color) !important;
+}
+
+.theme-text-color {
+    color: var(--body-font-color);
+}
+
+.bg-primary-color {
+    background-color: var(--bg-primary);
+}
+
+.bg-secondary-color {
+    background-color: var(--bg-secondary);
+}
+
+.footer-bg-color {
+    background-color: var(--footer-bg);
+}
+
+.theme-border {
+    border: 1px solid var(--border-color);
+}
+
+.border-bottom {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.primary-bb {
+    border-bottom: 1px solid var(--bg-primary-border);
+}
+
+.secondary-bb {
+    border-bottom: 1px solid var(--bg-secondary-border);
+}
+
+.border-top {
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.orange-color {
+    color: var(--orange-color);
+}
+
+.green-color {
+    color: var(--green-color);
+}
+
+.red-color,
+.theme-link-red {
+    color: var(--red-color);
+}
+
+.red-color:hover,
+.theme-link-red:hover {
+    color: var(--red-color-hover) !important;
+}
+
+button.red-color:hover,
+a.red-color:hover,
+.theme-link-red:hover {
+    color: var(--red-color-hover);
+}
+
+.bg-orange {
+    background-color: var(--orange-color);
+}
+
+.bg-green {
+    background-color: var(--green-color);
+}
+
+.bg-red {
+    background-color: var(--red-color);
+}
+
+.theme-link {
+    color: var(--primary-color);
+}
+
+.theme-link:hover {
+    color: var(--primary-hover-color) !important;
+}
+
+.theme-link-hover:hover {
+    color: var(--primary-color);
+}
+
+.bg-btn {
+    background-color: var(--btn-color);
+}
+
+.bg-btn:hover {
+    background-color: var(--btn-hover-color);
+}
+
+.forum-font {
+    font-family: var(--forum-regular);
+}
+
+/*--------------------------------
+    2.3 Theme padding, margin
+-----------------------------------*/
+.section-t-space {
+    padding-top: 120px;
+}
+
+.section-b-space {
+    padding-bottom: 120px;
+}
+
+.section-t-small-space {
+    padding-top: 95px;
+}
+
+.section-b-small-space {
+    padding-bottom: 95px;
+}
+
+.section-t-80-space {
+    padding-top: 80px;
+}
+
+.section-b-80-space {
+    padding-bottom: 80px;
+}
+
+.section-t-60-space {
+    padding-top: 60px;
+}
+
+.section-b-60-space {
+    padding-bottom: 60px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.pl-30 {
+    padding-left: 30px;
+}
+
+.pr-30 {
+    padding-right: 30px;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pb-15 {
+    padding-bottom: 15px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.p-25 {
+    padding: 25px;
+}
+
+.pb-25 {
+    padding-bottom: 25px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.me-10 {
+    margin-right: 10px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.me-20 {
+    margin-right: 15px;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.me-25 {
+    margin-right: 25px;
+}
+
+.ms-25 {
+    margin-left: 25px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.me-30 {
+    margin-right: 30px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.me-15 {
+    margin-right: 15px;
+}
+
+.radius-95 {
+    border-radius: 95px;
+}
+
+.radius-3 {
+    border-radius: 3px;
+}
+
+.radius-4 {
+    border-radius: 4px;
+}
+
+.radius-5 {
+    border-radius: 5px;
+}
+
+.radius-8 {
+    border-radius: 8px;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+.radius-12 {
+    border-radius: 12px;
+}
+
+.radius-15 {
+    border-radius: 15px;
+}
+
+.radius-20 {
+    border-radius: 20px;
+}
+
+.radius-50 {
+    border-radius: 50%;
+}
+
+.radius-t-r-0 {
+    border-top-right-radius: 0 !important;
+}
+
+.radius-t-l-0 {
+    border-top-left-radius: 0 !important;
+}
+
+.radius-b-r-0 {
+    border-bottom-right-radius: 0 !important;
+}
+
+.radius-b-l-0 {
+    border-bottom-left-radius: 0 !important;
+}
+
+/*--------------------------------
+    2.3 Theme Font Family, Font Size
+-----------------------------------*/
+.font-normal {
+    font-weight: 400;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-semi-bold {
+    font-weight: 600;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-light {
+    font-weight: 100;
+}
+
+.font-36 {
+    font-size: 36px;
+    line-height: 46px;
+}
+
+.font-24 {
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.font-20 {
+    font-size: 20px;
+    line-height: 31px;
+}
+
+.font-22 {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.font-18 {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.font-17 {
+    font-size: 17px;
+}
+
+.font-16 {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.font-15 {
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-13 {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.font-12 {
+    font-size: 12px;
+    line-height: 160%;
+}
+
+.font-11 {
+    font-size: 11px;
+    line-height: 12px;
+}
+
+/*--------------------------------
+   2.4 Template Default CSS
+-----------------------------------*/
+section {
+    position: relative;
+}
+
+.section-title-wrap .section-title {
+    padding-right: 34px;
+}
+
+.section-title-wrap {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 41px;
+}
+
+.section-title-number {
+    position: relative;
+    top: -9px;
+    right: 2px;
+}
+
+.section-subtitle {
+    padding-bottom: 35px;
+    margin-bottom: 19px;
+    line-height: 12px;
+}
+
+.section-title-para p {
+    font-size: 42px;
+    line-height: 52px;
+    color: var(--white-color);
+    font-weight: 500;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
+}
+
+/* Avatar CSS */
+.avatar-md {
+    height: 3.8rem;
+    width: 3.8rem;
+}
+
+.avatar-xl {
+    height: 5.5rem;
+    width: 5.5rem;
+}
+
+/* Avatar CSS */
+
+/*--------------------------------
+   2.5 Template Common CSS
+-----------------------------------*/
+
+/*Pagination CSS*/
+.pagination li {
+    margin: 15px 7.5px 0;
+}
+
+.page-item.active .page-link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.page-item .page-link {
+    transition: ease all .5s;
+}
+
+.page-item:hover .page-link {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination .page-link i {
+    font-size: 24px;
+}
+
+.pagination .page-link {
+    color: var(--text-primary);
+    font-size: 30px;
+    line-height: 16px;
+    background-color: var(--white-color);
+    height: 60px;
+    width: 60px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px !important;
+    border-radius: 50%;
+    border: 0;
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+/*------------------------------------------
+    2.Typography
+-------------------------------------------*/
+
+/*--------------------------------------------
+    3. Button Style
+---------------------------------------------*/
+.section-btn {
+    margin-top: 42px;
+}
+
+.btn {
+    padding: 0;
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+button {
+    background-color: transparent;
+}
+
+button:focus {
+    outline: 0;
+}
+
+/*-----Theme Button Style-----*/
+.theme-btn {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    padding: 8px 20px !important;
+    min-height: 60px;
+    justify-content: center;
+    border-radius: 10px;
+    color: var(--black-color);
+    border: 1px solid transparent;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    background-color: var(--btn-color);
+    text-align: center;
+    transition: 400ms;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.theme-btn:hover {
+    color: var(--black-color) !important;
+    background-color: var(--btn-hover-color);
+}
+
+/* Button Hover Effect */
+.theme-btn-container {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.theme-btn-circle {
+    background-color: var(--white-color);
+    border-radius: 1000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    pointer-events: none;
+}
+
+.button_text_container {
+    position: relative;
+    z-index: 99;
+}
+
+.explode-circle {
+    animation: explode 0.5s forwards;
+}
+
+.desplode-circle {
+    animation: desplode 0.5s forwards;
+}
+
+@keyframes explode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: rgba(42, 53, 80, 0.2);
+    }
+
+    100% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: var(--white-color);
+    }
+}
+
+@keyframes desplode {
+    0% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: var(--white-color);
+    }
+
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: var(--white-color);
+    }
+}
+
+/* Button Hover Effect */
+
+/* Round Theme Button */
+.round-btn {
+    position: absolute;
+    height: 105px;
+    width: 105px;
+    font-size: 18px;
+    background-color: var(--btn-color);
+    color: var(--black-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.round-btn:hover {
+    background-color: var(--btn-hover-color);
+    color: var(--black-color);
+}
+
+/* Round Theme Button */
+
+/*--------------------------------------------
+    3. Button Style
+---------------------------------------------*/
+
+/*-------------------------------------------
+    5. Navbar Area CSS
+-------------------------------------------*/
+.container {
+    padding: 0;
+}
+
+.menu-section-area {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    z-index: 9999;
+    overflow-x: visible;
+}
+
+@media only screen and (min-width: 992px) {
+    #mainNav {
+        display: block;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav-middle {
+        padding-left: 0 !important;
+    }
+}
+
+/* Main Menu Start */
+.offcanvas {
+    z-index: 99999;
+}
+
+.desktop-offcanvas-menu .theme-btn-container {
+    border: 1px solid var(--btn-color);
+}
+
+#mainNav .offcanvas-body {
+    justify-content: space-between;
+}
+
+.navbar-nav-left {
+    /* width: 215px; */
+}
+
+.navbar-nav-middle {
+    justify-content: flex-end;
+    height: 110px;
+}
+
+.navbar-nav-right {
+    justify-content: flex-end;
+    /* width: 303px; */
+    border-left: 1px solid #1b1b1b;
+    padding-left: 36px;
+}
+
+.navbar {
+    padding: 0;
+}
+
+#mainNav {
+    display: flex !important;
+    transition: all ease .6s;
+    background-color: transparent;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #1b1b1b;
+}
+
+#mainNav.sticky {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+    background-color: var(--navbar-bg);
+    animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+#mainNav .navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right: 1px solid #1b1b1b;
+    margin: 0;
+    padding: 0;
+    padding-right: 36px;
+}
+
+.navbar-brand.mobile-navbar-brand {
+    display: none !important;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 76px;
+    padding: 0;
+    margin: 0 27.5px;
+    position: relative;
+    color: var(--white-color);
+    display: flex;
+    transition: ease all .5s;
+}
+
+.navbar-nav-middle {
+    font-weight: 500;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link.active,
+.offcanvas .navbar-nav .nav-item .nav-link:hover,
+.offcanvas .navbar-nav .nav-item .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.navbar-nav-right .theme-btn-container {
+    margin-right: 25px;
+}
+
+.navbar-nav-right .theme-btn {
+    min-width: 179px;
+    min-height: 60px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.menu-offcanvas-btn.mobile-menu-btn {
+    display: none !important;
+}
+
+.menu-offcanvas-btn {
+    height: 60px;
+    width: 60px;
+    color: var(--text-primary);
+    font-size: 24px;
+    display: block !important;
+}
+
+.desktop-offcanvas-menu .navbar-nav-middle {
+    height: auto;
+    display: block;
+    padding: 0;
+}
+
+/*Menu Mobile Responsive CSS Start*/
+
+/* Mobile Menu CSS Start */
+@media only screen and (max-width: 1399px) {
+
+    #mainNav .navbar-brand {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .navbar-nav-right {
+        border-left: none;
+    }
+
+    .navbar-brand img,
+    .offcanvas-logo img {
+        height: 29px;
+        width: auto;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link,
+    .navbar-nav-middle .nav-item .nav-link {
+        font-size: 16px;
+        line-height: initial;
+    }
+
+    .navbar-nav-right .theme-btn {
+        min-width: 162px;
+        min-height: 50px;
+        font-size: 16px;
+    }
+
+    .menu-offcanvas-btn {
+        height: 50px;
+        width: 50px;
+    }
+
+    .menu-offcanvas-btn img {
+        height: 20px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+
+    .navbar-brand img,
+    .offcanvas-logo img {
+        height: 30px;
+    }
+
+    .menu-offcanvas-btn img {
+        top: 0;
+    }
+
+    #mainNav .navbar-nav .nav-item .nav-link,
+    .navbar-nav-middle .nav-item .nav-link {
+        font-size: 14px;
+        margin: 0 14px;
+    }
+
+    .navbar-nav-right .theme-btn-container {
+        margin-right: 20px;
+    }
+
+    .navbar-nav-right .theme-btn {
+        min-width: auto;
+        min-height: 40px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .menu-offcanvas-btn {
+        height: 40px;
+        width: 40px;
+        padding: 3px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-offcanvas-btn img {
+        height: 17px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .menu-offcanvas-btn.mobile-menu-btn {
+        display: flex !important;
+    }
+
+    .mobile-menu-btn {
+        height: 35px;
+        width: 37px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-menu-btn img {
+        height: 16px;
+    }
+}
+
+/* Mobile Menu CSS End */
+
+/*Menu Mobile Responsive CSS End*/
+
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+    #mainNav {
+        height: 60px;
+    }
+
+    .offcanvas-header .btn-close {
+        box-shadow: none;
+    }
+
+    .navbar-brand.desktop-navbar-brand {
+        display: none !important;
+    }
+
+    .navbar-brand.mobile-navbar-brand {
+        display: flex !important;
+    }
+
+}
+
+/* ============ small devices .end// ============ */
+/*Multilevel Dropdown Menu CSS End*/
+
+/*-------------------------------------------
+    7. Preloader Area Start
+-------------------------------------------*/
+#preloader {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999999999999999;
+}
+
+#preloader-status {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+/*-------------------------------------------
+    7. Preloader Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    8. Header Area
+-------------------------------------------*/
+/* Hero top area */
+.hero-area {
+    padding-top: 10px;
+}
+
+.hero-top {
+    padding-bottom: 284px;
+    background-image: url("../img/hero-shape.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 110px;
+}
+
+.hero-title span {
+    line-height: 130px;
+    display: block;
+}
+
+/* Hero top area */
+
+/* Hero bottom part */
+.pattern-bg {
+    background-image: url("../img/body-bg-img.png");
+}
+
+.hero-img-wrap {
+    margin-top: -284px;
+    overflow: hidden;
+}
+
+/* Hero bottom part */
+
+/* Hero Bottom Area */
+.slideUpAnimation {
+    animation-name: slideUpImage;
+    animation-duration: 2s;
+    animation-delay: 0.7s;
+}
+
+@keyframes slideUpImage {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+/* Dot styles */
+.hero-dot-item1 {
+    top: 97px;
+    right: 235px;
+}
+
+.hero-dot-item2 {
+    top: 97px;
+    left: 235px;
+}
+
+.hero-dot-item3 {
+    bottom: 95px;
+    left: 50%;
+    right: 50%;
+}
+
+.hero-dot-item3 .hero-dot-content {
+    top: -107px;
+}
+
+.hero-dot-item3 .hero-dot-content::after {
+    top: 80px;
+    bottom: -16px;
+    transform: translate(-94%, 0) rotate(180deg);
+}
+
+.hero-dot-item4 {
+    top: 50%;
+    right: 197px;
+}
+
+.hero-dot-item5 {
+    top: 60%;
+    left: 150px;
+}
+
+.hero-dot-item6 {
+    top: 70%;
+    right: 300px;
+}
+
+.hero-dot-item7 {
+    top: 30%;
+    left: 150px;
+}
+
+.hero-dot {
+    height: 34px;
+    width: 34px;
+    background-color: transparent;
+    border: 1px solid var(--white-color);
+    top: 0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-dot::before {
+    content: "";
+    z-index: 1;
+    height: 20px;
+    width: 20px;
+    background-color: var(--white-color);
+    left: 50%;
+    top: 50%;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.hero-dot::after {
+    content: "";
+    z-index: 2;
+    height: 10px;
+    width: 10px;
+    background-color: var(--white-color);
+    left: 50%;
+    top: 50%;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.hero-dot-item:hover .hero-dot::after {
+    background-color: var(--primary-color);
+}
+
+.hero-dot-content {
+    min-width: 282px;
+    min-height: 80px;
+    /* z-index: -1; */
+    position: absolute;
+    top: 59px;
+    /* opacity: 0; */
+    left: 50%;
+    right: 50%;
+    transform: translate(-42%, 0);
+    justify-content: space-evenly;
+    padding: 12px;
+}
+
+.hero-dot-content::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    background-image: url("../img/triangle-shape.png");
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 100%;
+    top: -16px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-10%, 0);
+}
+
+.hero-dot-item:hover .hero-dot-content {
+    opacity: 1;
+    z-index: 9;
+}
+
+.hero-tech-name {
+    color: #040404;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.hero-tech-point {
+    background-color: var(--primary-color);
+    border-radius: 13.5px;
+    min-height: 27px;
+    min-width: 58px;
+}
+/* Dot styles */
+
+/*-------------------------------------------
+    8. Header Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    9. About Me Area End
+-------------------------------------------*/
+.about-me-item {
+    border: 1px solid var(--bg-secondary-border);
+    min-height: 118px;
+    padding: 33px;
+}
+
+.about-me-content {
+    font-size: 20px;
+    color: var(--white-color);
+}
+
+.about-me-title {
+    margin-bottom: 7px;
+}
+.about-me-box-wrap .col-md-6:nth-child(odd) .about-me-item {
+    background-color: var(--primary-color)!important;
+}
+.about-me-box-wrap .col-md-6:nth-child(odd) .about-me-item .about-me-title, .about-me-box-wrap .col-md-6:nth-child(odd) .about-me-item .about-me-content {
+    color: var(--black-color)!important;
+}
+/*-------------------------------------------
+    9. About Me Area Start
+-------------------------------------------*/
+
+/*-------------------------------------------
+    10. Recent Works Area Start
+-------------------------------------------*/
+.recent-work-title {
+    line-height: 21px;
+
+}
+.recent-work-number {
+    line-height: 18px;
+}
+
+.recent-works-list .recent-work-item:nth-child(even) .recent-work-inner {
+    float: right;
+}
+
+.recent-works-list .recent-work-item:last-child {
+    padding-bottom: 0 !important;
+}
+
+.recent-work-item .round-btn,
+.services-item .round-btn {
+    opacity: 0;
+}
+
+.recent-work-item:hover .round-btn,
+.services-item:hover .round-btn {
+    opacity: 1;
+}
+
+.recent-work-item:hover .portfolio-tab-work-title a {
+    color: var(--primary-color)!important;
+}
+
+.services-item .services-right img {
+	-webkit-transform: rotate(0) scale(1);
+	transform: rotate(0) scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.services-item:hover .services-right img {
+    -webkit-transform: rotate(10deg) scale(1.2);
+	transform: rotate(10deg) scale(1.2);
+}
+
+.services-item .services-right::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,.1);
+    opacity: 0;
+    transition: ease all .5s;
+}
+
+.services-item:hover .services-right::after {
+    opacity: 1;
+}
+
+.services-item:hover .services-left h4 a {
+    color: var(--primary-color);
+}
+
+/*-------------------------------------------
+    10. Recent Works Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    11. Services Area Start
+-------------------------------------------*/
+.services-item-inner {
+    padding: 30px;
+    border: 1px solid #1e1e1e;
+    margin-top: 20px;
+}
+
+.services-right {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.services-item ul li {
+    display: flex;
+    padding: 20px 0 20px 0;
+}
+
+.services-item ul li span {
+    padding-right: 30px;
+}
+/*-------------------------------------------
+    11. Services Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    12. Marquee Area Start
+-------------------------------------------*/
+.marquee-area {
+    background-color: var(--primary-color);
+}
+
+.marquee-area-inner {
+    height: 90px;
+    width: 100vw;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.marquee-wrap {
+    height: 100%;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-item {
+    font-size: 36px;
+    line-height: 46px;
+    margin-right: 60px;
+}
+
+.marquee-item.text-white img {
+    height: 31px;
+    width: 31px;
+    margin-bottom: 5px;
+    margin-right: 17px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/*-------------------------------------------
+    12. Marquee Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    13. Expertise Slider Area Start
+-------------------------------------------*/
+.expertise-area {
+    background-image: url("../img/expertise-img/expertise-bg-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.single-logo {
+    text-align: center;
+    margin: 10px;
+    height: 127px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-carousel.owl-carousel .owl-item img {
+    width: auto;
+    display: inline-block;
+    transition: ease all .3s;
+}
+
+.brand-carousel.owl-carousel .owl-item:hover img {
+    opacity: 1;
+}
+
+/*-------------------------------------------
+    13. Expertise Slider Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    14. Pricing Plan CSS Start
+-------------------------------------------*/
+
+.price-card-item {
+    padding: 56px 47px 62px;
+    color: var(--text-secondary);
+}
+
+.price-card-item h5 {
+    color: var(--text-secondary);
+    line-height: 27px;
+}
+
+.price-title {
+    font-size: 120px;
+    line-height: 92px;
+    color: var(--text-secondary);
+    margin: 29px 0 35px;
+}
+
+.price-duration {
+    top: 9px;
+}
+
+hr {
+    background-color: var(--text-secondary);
+    opacity: 1;
+    height: 1px;
+    border: 0;
+    margin: 0;
+}
+
+.pricing-features {
+    margin: 60px 0;
+}
+
+.pricing-features li {
+    color: var(--text-secondary);
+    padding-bottom: 18px;
+    line-height: 18px;
+}
+
+.pricing-features li:last-child {
+    padding-bottom: 0;
+}
+
+.price-check-icon {
+    width: 7.76px;
+    height: 8px;
+    margin-right: 8px;
+    background: var(--text-secondary);
+}
+
+.price-card-item .theme-btn {
+    border-radius: 30px;
+    background-color: var(--white-color);
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary) !important;
+    padding: 8px 80px 8px 20px !important;
+}
+
+.price-card-item .theme-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color) !important;
+}
+
+.price-card-item .theme-btn:hover .price-btn-dot-1 {
+    background-color: var(--white-color);
+}
+
+.price-card-item .theme-btn:hover .price-btn-dot-1::after {
+    background-color: var(--primary-color);
+}
+
+.price-btn-dot-1 {
+    height: 60px;
+    width: 60px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 30px;
+    right: 0;
+    border-right: 0;
+}
+
+.price-btn-dot-1::after {
+    content: "";
+    z-index: 9;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: var(--text-secondary);
+    border-radius: 30px;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.special-price-table-tag {
+    min-width: 120px;
+    min-height: 36px;
+    font-size: 16px;
+    right: -42px;
+    top: 42px;
+    transform: rotate(-90deg);
+}
+
+.pricing-plan-area .price-card-item-wrap:nth-child(2) .price-card-item .theme-btn {
+    padding: 8px 20px 8px 80px !important;
+}
+
+.pricing-plan-area .price-card-item-wrap:nth-child(2) .price-card-item .price-btn-dot-1 {
+    left: 0;
+    border-right: 1px solid var(--text-secondary);
+    border-left: 0;
+}
+
+/*-------------------------------------------
+    14. Pricing Plan CSS End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    15. Customer Testimonial Area Start
+-------------------------------------------*/
+.testimonial-content {
+    padding-left: 50px;
+}
+
+.testimonial-content .testi-text {
+    margin-bottom: 40px;
+    margin-top: 8px;
+}
+
+.customer-designation p {
+    line-height: 21px;
+    margin-top: 10px;
+}
+
+/* Controls nav */
+.customer-testimonial-slider .owl-nav {
+    position: absolute;
+    bottom: 0;
+    right: 60%;
+    margin-top: 0 !important;
+}
+
+.customer-testimonial-slider .owl-nav button,
+.service-details-slider .owl-nav button {
+    background: transparent !important;
+    height: 43px;
+    width: 74px;
+    border-radius: 21.5px !important;
+    font-size: 23px !important;
+    background: var(--bg-primary) !important;
+}
+
+.customer-testimonial-slider .owl-nav button i,
+.service-details-slider .owl-nav button i {
+    color: var(--white-color) !important;
+}
+
+.customer-testimonial-slider .owl-nav button:hover,
+.service-details-slider .owl-nav button:hover {
+    background: var(--white-color) !important;
+}
+
+.customer-testimonial-slider .owl-nav button:hover i,
+.service-details-slider .owl-nav button:hover i {
+    color: var(--black-color) !important;
+}
+
+.owl-big.owl-theme {
+    position: relative;
+}
+
+/* Testimonial Dots */
+.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+    height: 24px;
+    width: 24px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    margin: 7px;
+}
+
+.owl-theme .owl-dots .owl-dot.active,
+.owl-theme .owl-dots .owl-dot:hover {
+    border: 2px solid var(--bg-secondary);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: #D6D6D6;
+    border-radius: 30px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: var(--bg-secondary);
+    border: 2px solid var(--bg-secondary);
+}
+
+/* Testimonial Dots */
+
+/* Customer Testimonial Right Part */
+
+/* Owl Navigation */
+.owl-small .owl-nav button {
+    height: 50px;
+    width: 50px;
+    border: 1px solid var(--black-color) !important;
+    border-radius: 50% !important;
+    background-color: var(--white-color) !important;
+}
+
+.owl-small .owl-nav [class*=owl-]:hover {
+    color: var(--text-green) !important;
+}
+
+.owl-small .owl-dots,
+.owl-small .owl-nav {
+    text-align: left;
+}
+
+.owl-small .owl-nav {
+    margin-top: 30px;
+    margin-left: 43px;
+}
+
+/*-------------------------------------------
+    15. Customer Testimonial Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    16. Blog Area Start
+-------------------------------------------*/
+.blog-item {
+    border-top: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a1a1a;
+    padding-top: 34px;
+    padding-bottom: 34px;
+    margin-bottom: 27px;
+    overflow: hidden;
+}
+
+.blog-items-wrap .blog-item:last-child {
+    margin-bottom: 0;
+}
+
+.blog-item h5 {
+    font-size: 30px;
+}
+
+.blog-item-img {
+    background-color: #b1b1b1;
+}
+
+.blog-item-img img {
+    width: auto;
+    object-fit: cover;
+}
+
+.blog-item:hover .blog-item-content a {
+    color: var(--primary-color);
+    background-size: 100% var(--border-width);
+}
+
+.blog-item-btn {
+    height: 66px;
+    width: 66px;
+    font-size: 27px;
+    background-color: var(--bg-secondary);
+    color: var(--black-color);
+    top: 28%;
+}
+
+.blog-item:hover .blog-item-btn {
+    color: #040404;
+    background-color: var(--white-color);
+}
+
+.blog-item-img .blog-item-btn {
+    display: none;
+    opacity: 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.blog-item:hover .blog-item-img .blog-item-btn {
+    opacity: 1;
+}
+
+.blog-item-right .blog-item-btn {
+    display: flex;
+}
+
+.blog-item-right {
+    padding: 0 62px;
+}
+
+.blog-item-content {
+    margin: -12px 173px 0 59px;
+}
+
+.blog-item-cat {
+    margin-top: 37px;
+}
+
+.blog-item-date {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-item-date h3 {
+    margin-bottom: 59px;
+    line-height: 33px;
+}
+
+/*-------------------------------------------
+    16. Blog Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    17. Blog grid Area Start
+-------------------------------------------*/
+.blog-grid-item {
+    border: 1px solid #1e1e1e;
+}
+
+.blog-grid-item-content {
+    padding: 40px;
+}
+
+.blog-grid-item-date p {
+    line-height: 14px;
+}
+
+.blog-item-title {
+    padding: 29px 0;
+}
+
+.blog-grid-item-img img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.blog-grid-item .blog-item-btn {
+    height: 60px;
+    width: 60px;
+    background-color: var(--primary-color);
+    color: var(--black-color);
+    top: 50%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: ease all .5s;
+}
+
+.blog-grid-item:hover .blog-item-btn {
+    opacity: 1;
+}
+
+.blog-grid-item .blog-item-btn:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.blog-grid-item:hover .blog-item-title a {
+    color: var(--primary-hover-color);
+    background-size: 100% var(--border-width);
+}
+
+/*-------------------------------------------
+    17. Blog grid Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    18. Blog Details Page Area Start
+-------------------------------------------*/
+.blog-details-title-box {
+    border: 1px solid #1e1e1e;
+    padding: 52px 28px 60px;
+    margin-top: -120px;
+    position: relative;
+}
+
+.blog-details-area .portfolio-banner-img-wrap img {
+    min-height: 627px;
+    object-fit: cover;
+}
+
+.blog-details-small-title {
+    border-bottom: 1px solid var(--white-color);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.blog-details-title-box h3 {
+    margin: 27px 0;
+}
+
+.blog-details-title-divider {
+    margin: 0 10px;
+}
+
+.author-img {
+    height: 54px;
+    width: 54px;
+    margin-right: 16px;
+}
+
+.author-img img {
+    height: 54px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.publish-date {
+    margin: 0 15px;
+    border-left: 1px solid var(--white-color);
+    border-right: 1px solid var(--white-color);
+    padding: 0 15px;
+    line-height: 19px !important;
+}
+
+.reading-time {
+    border: 1px solid var(--bg-primary-border);
+    padding: 9px;
+    height: 31px;
+    min-width: 116px;
+    border-radius: 15.5px;
+    line-height: 12px !important;
+}
+
+.blog-details-content p {
+    font-weight: 400;
+}
+
+/* Blockquote css */
+.blockquote-area {
+    padding-left: 32px;
+    position: relative;
+    margin: 60px 0;
+}
+
+.blockquote-area:before {
+    height: 100%;
+    width: 2px;
+    background: var(--white-color);
+    left: 0;
+    content: "";
+    top: 0;
+    position: absolute;
+}
+
+.blockquote p {
+    font-size: 20px;
+    color: var(--white-color);
+    line-height: 30px;
+}
+
+.blockquote {
+    margin: 19px 0 24px;
+}
+
+.blockquote-writer-name {
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    line-height: 20px;
+}
+
+.blockquote-writer-name:after {
+    content: "";
+    height: 2px;
+    width: 64px;
+    background: white;
+    right: -77px;
+    top: 10px;
+    display: flex;
+    position: absolute;
+}
+
+/* Blockquote css */
+
+.blog-details-gallery {
+    margin-top: 60px;
+}
+
+.blog-details-content h4 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.blog-details-content p {
+    margin-bottom: 30px;
+}
+
+.blog-details-list li {
+    display: flex;
+    align-items: center;
+    padding-bottom: 9px;
+}
+
+.blog-details-list li span {
+    height: 8px;
+    width: 8px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    display: block;
+}
+
+/* Tags/Share css */
+.tags-share-area {
+    padding: 27px 0 27px;
+    border-top: 1px solid var(--bg-secondary-border);
+    border-bottom: 1px solid var(--bg-secondary-border);
+}
+
+.tag-list a {
+    margin-left: 6px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.share-part {
+    justify-content: flex-end;
+}
+
+.social-share-list li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    width: 46px;
+    margin-left: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+.social-share-list li a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Tags/Share css */
+
+/*Blog Comment Area Start*/
+.blog-reply-btn {
+    margin-top: 13px;
+}
+
+.contact-form-wrapper {
+    padding: 49px 35px;
+    border: 1px solid #1e1e1e;
+}
+
+.contact-form-wrapper h4 {
+    font-size: 42px;
+    line-height: 28px;
+}
+
+.contact-form-wrapper .form-control {
+    background-color: var(--bg-secondary);
+    border: 1px solid #151515;
+    padding: 25px 23px 12px !important;
+
+    box-shadow: 0 0 0 64px var(--bg-secondary) inset !important;
+    height: 60px !important;
+    font-size: 16px;
+}
+
+.contact-form-wrapper .form-floating>label {
+    padding-left: 23px;
+    font-size: 16px;
+}
+
+.contact-form-wrapper .form-control:focus,
+.contact-form-wrapper .form-control:not(:placeholder-shown) {
+    background-color: var(--bg-secondary) !important;
+    box-shadow: 0 0 0 64px var(--bg-secondary) inset !important;
+    border-color: #86b7fe;
+}
+
+.contact-form-wrapper .form-control:-webkit-autofill,
+.contact-form-wrapper .form-control:-webkit-autofill:hover,
+.contact-form-wrapper .form-control:-webkit-autofill:focus,
+.contact-form-wrapper .form-control:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 64px var(--bg-secondary) inset !important;
+    -webkit-text-fill-color: var(--white-color) !important;
+}
+
+.contact-form-wrapper .form-control:-moz-autofill,
+.contact-form-wrapper .form-control:-moz-autofill:hover,
+.contact-form-wrapper .form-control:-moz-autofill:focus,
+.contact-form-wrapper .form-control:-moz-autofill:active {
+    background-color: var(--bg-secondary) !important;
+    color: var(--white-color) !important;
+}
+
+.contact-form-wrapper textarea.form-control {
+    min-height: 185px !important;
+    border-radius: 10px !important;
+}
+
+.contact-form-wrapper .theme-btn {
+    height: 60px !important;
+}
+
+.contact-form-wrapper .theme-btn i {
+    margin-left: 6px;
+}
+
+/* For Big Button Effect */
+.contact-form-wrapper .theme-btn-circle {
+    border-radius: 10px;
+}
+
+.contact-form-wrapper .theme-btn-circle {
+    background-color: var(--primary-color);
+    border-radius: 10000px;
+}
+
+.contact-form-wrapper .explode-circle {
+    animation: bigExplode 0.5s forwards;
+}
+
+.contact-form-wrapper .desplode-circle {
+    animation: bigDesplode 0.5s forwards;
+}
+
+@keyframes bigExplode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: rgba(42, 53, 80, 0.2);
+    }
+
+    100% {
+        width: 2000px;
+        height: 2000px;
+        margin-left: -1000px;
+        margin-top: -1000px;
+        background-color: var(--white-color);
+    }
+}
+
+@keyframes bigDesplode {
+    0% {
+        width: 2000px;
+        height: 2000px;
+        margin-left: -1000px;
+        margin-top: -1000px;
+        background-color: var(--white-color);
+    }
+
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: var(--white-color);
+    }
+}
+
+/*Blog Comment Area End*/
+
+/*--- 22.2 Leave a Comment Reply Style --- */
+.blog-comment-title {
+    margin-bottom: 50px;
+}
+
+.author-details .writer-name {
+    color: #18171C;
+}
+
+.about-author {
+    background-color: #e5ffff;
+    border: 1px solid var(--btn-color);
+    padding: 45px 50px;
+    margin: 50px 0;
+    display: inline-flex;
+    border-radius: 10px;
+}
+
+.comment-author-img {
+    height: 100px;
+    width: 100px;
+}
+
+.comment-author-img img {
+    height: 100px;
+    width: 100%;
+}
+
+.author-details {
+    width: calc(100% - 100px);
+}
+
+.comment-date-time {
+    margin: 10px 0 15px;
+}
+
+.blog-comment-item .comment-author-img {
+    width: 80px;
+    height: 80px;
+    background-color: #C4C4C4;
+}
+
+.blog-comment-item .comment-author-img img {
+    min-height: 80px;
+    width: 100%;
+}
+
+.blog-comment-item .author-details {
+    width: calc(100% - 80px);
+}
+
+/*--- 22.1 Block 3 Style--- */
+.blog-comment-item {
+    margin-bottom: 44px;
+    display: inline-flex;
+}
+
+.blog-comment-item.under-comment {
+    padding-left: 60px;
+}
+
+.blog-comment-item.under-under-comment {
+    padding-left: 120px;
+}
+/*-------------------------------------------
+    18. Blog Details Page Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    19. Footer Area Start
+-------------------------------------------*/
+.footer-area h6,
+.footer-area .h-6 {
+    line-height: 15px;
+}
+
+.footer-social li a {
+    display: inline-flex;
+    border: 1px solid var(--white-color);
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 10px;
+    border-radius: 50%;
+}
+.footer-social li a:hover {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--black-color);
+}
+
+.footer-bottom-wrap {
+    min-height: 130px;
+    padding: 34px 0;
+    border-top: 1px solid var(--bg-secondary-border);
+}
+
+.footer-bottom-links a:last-child {
+    margin-left: 36px;
+}
+
+/* .scroll-to-top {
+    width: 46px;
+    height: 57px;
+    border-radius: 7px;
+    font-size: 23px;
+} */
+/* .scroll-to-top {
+    width: 46px;
+    height: 57px;
+    border-radius: 7px;
+    font-size: 23px;
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    z-index: 9;
+} */
+
+/*-------------------------------------------
+    19. Footer Area End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    20. Page Banner Start
+-------------------------------------------*/
+.page-banner-area {
+    text-align: center;
+}
+
+.remove-menu-space {
+    padding-top: 110px;
+}
+
+.page-banner-heading {
+    margin-top: -21px;
+    margin-bottom: -13px;
+}
+
+.page-banner-pattern-bg {
+    background-image: url("../img/page-banner-bg-pattern.jpg");
+}
+
+.breadcrumb-item+.breadcrumb-item,
+.breadcrumb-item a {
+    color: var(--white-color);
+    line-height: 28px;
+    font-size: 18px;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: #fff;
+    /* content: var(--bs-breadcrumb-divider, ">"); */
+}
+
+.breadcrumb {
+    margin-bottom: 0;
+}
+
+.inner-page-content p {
+    line-height: 30px;
+    margin-bottom: 42px;
+}
+
+/*-------------------------------------------
+    20. Page Banner End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    21. About Page Start
+-------------------------------------------*/
+.about-page-inner {
+    padding-bottom: 393px;
+}
+
+.about-banner-bottom .about-img-wrap {
+    margin-top: -393px;
+}
+
+/* About Introduction Area */
+.about-introduction-area .section-title-para {
+    padding-bottom: 0;
+}
+
+.counter-item {
+    border: 1px solid #353535;
+    height: 370px;
+    width: 370px;
+    border-radius: 50%;
+    margin: 0 -27px;
+}
+
+.counter-item h2 {
+    font-size: 100px;
+    line-height: 40px;
+    margin-bottom: 45px;
+}
+
+.counter-item p {
+    padding: 0px 87px;
+    line-height: 30px;
+}
+
+/* About Introduction Area */
+
+/* My Skills Area */
+.my-skills-area {
+    background-image: url("../img/about-page-img/my-skills-bg-img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.skill-item {
+    background-color: #161616;
+    /* height: 305px; */
+    border: 1px solid #1e1e1e;
+    padding: 40px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin: 0 20px 25px; */
+}
+
+.skill-img {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.skill-item h4 {
+    padding: 29px 0 0px;
+    font-size: 42px;
+    line-height: 58px;
+}
+
+/* My Skills Area */
+
+/* Honors & Awards Area */
+.awards-item h4 {
+    border-top: 1px solid var(--bg-secondary-border);
+    padding: 53.7px 0;
+    z-index: -1;
+}
+
+.awards-lists:last-child .awards-item h4 {
+    border-bottom: 1px solid var(--bg-secondary-border);
+}
+
+.award-title {
+    line-height: 36px;
+    margin-right: 40px;
+}
+
+.award-year {
+    margin-left: 40px;
+}
+
+.awards-item h4:hover .award-title {
+    background-size: 100% var(--border-width);
+}
+
+/* Honors & Awards Area */
+
+/*-------------------------------------------
+    21. About Page End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    22. Service Details Page Start
+-------------------------------------------*/
+/* Service features CSS */
+.service-features-area {
+    padding-top: 24px;
+    margin-bottom: -9px;
+}
+
+.service-features-list li {
+    line-height: 36px;
+    display: inline;
+}
+
+.service-features-list li span {
+    padding: 0 12px;
+}
+
+.service-features-list li:first-child span {
+    display: none;
+}
+
+/* Service Details Slider */
+.service-details-slider-area .container-fluid {
+    padding: 0;
+    overflow: hidden;
+}
+
+.service-details-slider {
+    background-color: #e3dfd3;
+}
+
+.service-details-slider .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 52.5%;
+    transform: translate(0, 50%);
+    margin-top: 0 !important;
+}
+
+.service-details-slider .owl-nav button {
+    position: absolute;
+    margin: 0 !important;
+}
+
+.service-details-slider.owl-carousel .owl-nav button.owl-prev {
+    left: 75px;
+    top: -42px;
+}
+
+.service-details-slider.owl-carousel .owl-nav button.owl-next {
+    right: 75px;
+    top: -42px;
+}
+
+/* Service Details Content Area */
+.service-details-content h4 {
+    padding-top: 45px;
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 500;
+}
+
+.service-details-content p {
+    margin-top: 36px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+/*-------------------------------------------
+    22. Service Details Page End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    23. Portfolio Page Start
+-------------------------------------------*/
+/* Portfolio Tab Area */
+
+/* Tab list */
+.portfolio-tab-container .nav-tabs {
+    margin-top: 18px;
+}
+
+.portfolio-tab-container .nav-tabs a {
+    min-height: 66px;
+    min-width: 100px;
+    border-radius: 33px;
+    padding: 18px 40px;
+    margin: 21px 10.5px 0;
+    line-height: 30px;
+}
+
+.portfolio-tab-container .nav-tabs a:hover,
+.portfolio-tab-container .nav-tabs a.active {
+    background-color: var(--primary-color) !important;
+    color: var(--black-color) !important;
+}
+
+/* Tab list */
+
+/* Tab Content */
+.portfolio-tab-container .portfolio-work-item .font-18 {
+    line-height: 16px;
+}
+
+.portfolio-tab-container .portfolio-work-item .recent-work-number {
+    height: 46px;
+    width: 46px;
+    border: 1px solid var(--bg-secondary-border);
+}
+
+.portfolio-tab-work-title {
+    margin-bottom: 7px;
+    position: relative;
+    line-height: 34px;
+}
+
+.portfolio-title-shape {
+    margin: -29px 34px 0 0;
+}
+
+.portfolio-tab-container .tab-pane .portfolio-work-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Tab Content */
+/* Portfolio Tab Area */
+
+/*-------------------------------------------
+    23. Portfolio Page End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    24. Portfolio Details Page Start
+-------------------------------------------*/
+.portfolio-details-area .round-btn {
+    background-color: var(--white-color);
+    height: 146px;
+    width: 146px;
+    transform: none;
+    top: -73px;
+    left: auto;
+    right: 0;
+    z-index: 9;
+}
+
+.portfolio-details-area .round-btn i {
+    padding-left: 8px;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 3px;
+}
+
+.portfolio-details-info {
+    margin: 60px 0;
+}
+
+.portfolio-details-info-box {
+    width: 222px;
+}
+
+.portfolio-details-info-title {
+    border-bottom: 1px solid var(--bg-secondary-border);
+    padding-bottom: 10px;
+}
+
+.portfolio-details-info-value {
+    padding-top: 10px;
+}
+
+.portfolio-details-important-feature-list {
+    margin-top: 36px;
+}
+
+.portfolio-details-important-feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-details-important-feature-list li span {
+    height: 8px;
+    width: 8px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+/* portfolio-details-slider-area */
+.portfolio-details-area .container-fluid {
+    padding: 0;
+    overflow: hidden;
+}
+
+.custom-nav {
+    margin-top: 60px;
+    border: 1px solid #1e1e1e;
+    height: 126px;
+    padding: 35px;
+}
+
+.custom-prev,
+.custom-next {
+    background-color: #ddd;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.custom-prev.disabled,
+.custom-next.disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+.custom-prev,
+.custom-next {
+    height: 56px;
+    width: auto;
+    background-color: var(--white-color);
+    font-size: 18px;
+    padding: 10px 39px;
+    font-weight: 500;
+    border-radius: 28px;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+    background-color: var(--btn-color);
+    color: var(--white-color);
+}
+
+.backToOverview {
+    border-bottom: 1px solid var(--white-color);
+    line-height: 20px;
+}
+
+.backToOverview:hover {
+    border-bottom: 1px solid var(--primary-hover-color);
+}
+
+/* portfolio-details-slider-area */
+
+/*-------------------------------------------
+    24. Portfolio Details Page End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    25. Contact Page Start
+-------------------------------------------*/
+.contact-info-item {
+    padding: 40px;
+    border: 1px solid #1e1e1e;
+    max-height: 170px;
+    height: 100%;
+}
+
+.contact-icon {
+    height: 90px;
+    width: 90px;
+    border-radius: 45px;
+}
+
+.contact-info-text {
+    margin-left: 26px;
+}
+
+.contact-info-item .about-me-content {
+    word-break: break-word;
+}
+
+/* Contact form area */
+.contact-form-area {
+    padding: 60px;
+    border: 1px solid #1e1e1e;
+    margin-top: 66px;
+}
+
+.contact-form {
+    padding-left: 73px;
+}
+
+.contact-form h3 {
+    margin-bottom: 32px;
+}
+
+.contact-form p {
+    margin-bottom: 22px;
+}
+
+.contact-form textarea {
+    height: 160px !important;
+}
+
+.contact-form .theme-btn-container {
+    border-radius: 34px;
+}
+
+.contact-form .theme-btn {
+    width: 134px;
+    min-height: 46px !important;
+    border-radius: 34px;
+    /* margin-top: 30px; */
+    padding: 10px !important;
+}
+
+/* Contact social */
+.contact-social-link {
+    bottom: 40px;
+    z-index: 999;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--white-color);
+    width: 300px;
+    height: 56px;
+    display: flex;
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-social-link li a {
+    height: 36px;
+    width: 36px;
+    color: #040404;
+    font-size: 16px;
+    padding: 7px;
+    margin: 7px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-social-link li a:hover {
+    background-color: var(--black-color);
+}
+
+/* Map area */
+#map {
+    height: 600px;
+    width: 100%;
+}
+
+.leaflet-top {
+    bottom: 30px !important;
+    top: auto !important;
+}
+
+.leaflet-left {
+    left: 276px !important;
+}
+
+/* Thank you page css */
+.thankyou-area .row {
+    min-height: 68vh;
+    max-height: 100%;
+    height: 650px;
+}
+.thank-box {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+}
+.thank-box h1 {
+    color: var(--primary-color);
+    font-size: 48px;
+}
+
+/*-------------------------------------------
+    25. Contact Page End
+-------------------------------------------*/
